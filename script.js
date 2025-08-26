@@ -1,11 +1,18 @@
-//your JS code here. If required.
-const element = document.getElementById('level');
-        let level = 0;
-        let current = element;
+window.addEventListener("DOMContentLoaded", () => {
+  const element = document.getElementById("level");
 
-        while(level != element){
-            level++;
-            current = current.parentElement
-        }
+  if (!element) {
+    // prevent crash if element isn't there
+    return;
+  }
 
-        alert("The level of the element is: " + level);
+  let level = 0;
+  let current = element;
+
+  while (current) {
+    level++;
+    current = current.parentElement;
+  }
+
+  alert("The level of the element is: " + level);
+});
